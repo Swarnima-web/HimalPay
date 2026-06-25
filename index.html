@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HimalPay — Send Money to India from Nepal</title>
+  <meta name="description" content="HimalPay is Nepal's most trusted cross-border remittance platform. Send money to India instantly, securely, and at the best rates — powered by licensed banking partners." />
+  <meta property="og:title" content="HimalPay — Send Money to India" />
+  <meta property="og:description" content="Nepal's fastest cross-border money transfer app. Best rates, instant delivery, bank-grade security." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="HimalPay Home">
+        <div class="logo-mark">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L3 28h26L16 2z" fill="url(#logoGrad)" opacity="0.9"/>
+            <path d="M16 8L8 24h16L16 8z" fill="white" opacity="0.25"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                <stop offset="0%" stop-color="#4F8EF7"/>
+                <stop offset="100%" stop-color="#1B3F8F"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Himal<span class="logo-accent">Pay</span></span>
+      </a>
+      <div class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#rates" class="nav-link">Rates</a>
+        <a href="#trust" class="nav-link">Security</a>
+      </div>
+      <div class="nav-cta">
+        <button class="btn-outline" onclick="openApp('login')" id="nav-login-btn">Log In</button>
+        <button class="btn-primary" onclick="openApp('register')" id="nav-signup-btn">Get Started</button>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="mobileMenu">
+      <a href="#features" onclick="toggleMenu()">Features</a>
+      <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+      <a href="#rates" onclick="toggleMenu()">Rates</a>
+      <a href="#trust" onclick="toggleMenu()">Security</a>
+      <button class="btn-primary w-full" onclick="openApp('register')">Get Started Free</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          NRB Licensed &nbsp;·&nbsp; RBI Compliant &nbsp;·&nbsp; Bank-Grade Security
+        </div>
+        <h1 class="hero-title">
+          Send Money to India<br/>
+          <span class="gradient-text">Fast. Safe. Fair.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Nepal's most trusted cross-border remittance platform. Transfer NPR to INR in minutes — powered by licensed banking partners with real exchange rates.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-hero-primary" onclick="openApp('register')" id="hero-cta-btn">
+            <span>Send Money Now</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="btn-hero-secondary" onclick="openApp('calculator')" id="hero-calc-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/>
+            </svg>
+            <span>Check Rate</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-target="50000">0</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" data-target="2">0</span><span class="stat-suffix">min</span>
+            <span class="stat-label">Avg Transfer Time</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">₹0</span>
+            <span class="stat-label">Hidden Fees</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-phone" aria-hidden="true">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-status-bar">
+              <span>9:41</span>
+              <span class="phone-icons">
+                <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="1" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="1" fill="currentColor"/><rect x="13.5" y="1" width="2.5" height="11" rx="1" fill="white" opacity="0.4"/></svg>
+                WiFi ▾ 🔋
+              </span>
+            </div>
+            <div class="phone-header">
+              <div class="phone-logo-sm">HP</div>
+              <span>HimalPay</span>
+              <button class="phone-notif" aria-label="Notifications">🔔</button>
+            </div>
+            <div class="phone-greeting">
+              <span class="phone-wave">👋</span>
+              <div>
+                <div class="phone-name">Namaste, Priya!</div>
+                <div class="phone-sub">Ready to send money?</div>
+              </div>
+            </div>
+            <div class="phone-balance-card">
+              <div class="phone-bal-label">Available Balance</div>
+              <div class="phone-bal-amt">NPR 25,000</div>
+              <div class="phone-bal-sub">≈ INR 15,625</div>
+              <div class="phone-quick-actions">
+                <button class="phone-qa" onclick="openApp('send')">
+                  <span>↗</span> Send
+                </button>
+                <button class="phone-qa" onclick="openApp('receive')">
+                  <span>↙</span> Receive
+                </button>
+                <button class="phone-qa" onclick="openApp('history')">
+                  <span>☰</span> History
+                </button>
+              </div>
+            </div>
+            <div class="phone-rate-ticker">
+              <div class="phone-rate-inner" id="rateTicker">
+                <span class="rate-live">🟢 LIVE</span>
+                <span>1 NPR = 0.625 INR</span>
+                <span class="rate-badge">Best Rate ⚡</span>
+              </div>
+            </div>
+            <div class="phone-tx-list">
+              <div class="phone-tx-title">Recent Transfers</div>
+              <div class="phone-tx-item">
+                <div class="phone-tx-avatar">R</div>
+                <div class="phone-tx-info">
+                  <div class="phone-tx-name">Ramesh Sharma</div>
+                  <div class="phone-tx-detail">Bank Transfer · SBI Delhi</div>
+                </div>
+                <div class="phone-tx-amount sent">-NPR 5,000</div>
+              </div>
+              <div class="phone-tx-item">
+                <div class="phone-tx-avatar" style="background:var(--success)">S</div>
+                <div class="phone-tx-info">
+                  <div class="phone-tx-name">Sunita Thapa</div>
+                  <div class="phone-tx-detail">UPI Transfer · @sunita</div>
+                </div>
+                <div class="phone-tx-amount sent">-NPR 2,500</div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-home-bar"></div>
+        </div>
+        <div class="phone-glow"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" id="trust">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>NRB Licensed</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>256-bit AES Encryption</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>RBI Compliant</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>24/7 Support</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>4.9★ Rated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATE CALCULATOR -->
+  <section class="calculator-section" id="rates">
+    <div class="section-inner">
+      <div class="section-tag">Live Exchange</div>
+      <h2 class="section-title">Real-Time Rate Calculator</h2>
+      <p class="section-subtitle">No hidden fees. What you see is what your recipient gets.</p>
+      <div class="calc-card">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="sendAmount">You Send (NPR)</label>
+            <div class="calc-input-wrap">
+              <span class="calc-flag">🇳🇵</span>
+              <input type="number" id="sendAmount" value="10000" min="100" max="1000000" aria-label="Amount to send in NPR" oninput="calcRate()"/>
+              <span class="calc-currency">NPR</span>
+            </div>
+          </div>
+          <div class="calc-arrow" aria-hidden="true">
+            <div class="calc-arrow-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label for="receiveAmount">They Receive (INR)</label>
+            <div class="calc-input-wrap">
+              <span class="calc-flag">🇮🇳</span>
+              <input type="number" id="receiveAmount" value="6250" readonly aria-label="Amount received in INR"/>
+              <span class="calc-currency">INR</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-breakdown">
+          <div class="calc-break-item">
+            <span>Exchange Rate</span>
+            <span class="calc-break-val">1 NPR = <strong>0.625 INR</strong></span>
+          </div>
+          <div class="calc-break-item">
+            <span>Transfer Fee</span>
+            <span class="calc-break-val green"><strong>NPR 0</strong> 🎉</span>
+          </div>
+          <div class="calc-break-item">
+            <span>Delivery Time</span>
+            <span class="calc-break-val"><strong>2–5 minutes</strong></span>
+          </div>
+          <div class="calc-break-divider"></div>
+          <div class="calc-break-item total">
+            <span>Total Cost</span>
+            <span class="calc-break-val"><strong id="totalCost">NPR 10,000</strong></span>
+          </div>
+        </div>
+        <button class="btn-calc-cta" onclick="openApp('send')" id="calc-send-btn">
+          Send NPR <span id="calcSendVal">10,000</span> Now →
+        </button>
+        <p class="calc-disclaimer">* Rate updated every 60 seconds. Final rate confirmed at time of transaction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-inner">
+      <div class="section-tag">Why HimalPay</div>
+      <h2 class="section-title">Built for Nepal. Trusted for India.</h2>
+      <p class="section-subtitle">Every feature designed around your real needs — not just a list of promises.</p>
+      <div class="features-grid">
+        <div class="feature-card" id="feat-speed">
+          <div class="feature-icon" style="--icon-color: #4F8EF7;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Transfers complete in 2–5 minutes. Real-time status tracking on every rupee — from Nepal to India, every step visible.</p>
+          <div class="feature-tag">Avg. 3 min</div>
+        </div>
+        <div class="feature-card featured" id="feat-rate">
+          <div class="feature-badge">Most Popular</div>
+          <div class="feature-icon" style="--icon-color: #C9A227;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Best Rates Guaranteed</h3>
+          <p>We source the best interbank rates directly and pass them to you. Zero markup, zero hidden charges. Completely transparent pricing.</p>
+          <div class="feature-tag">0 Hidden Fees</div>
+        </div>
+        <div class="feature-card" id="feat-security">
+          <div class="feature-icon" style="--icon-color: #22C55E;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Bank-Grade Security</h3>
+          <p>256-bit AES encryption, multi-factor authentication, biometric login, liveness detection KYC, and real-time fraud monitoring.</p>
+          <div class="feature-tag">ISO 27001</div>
+        </div>
+        <div class="feature-card" id="feat-kyc">
+          <div class="feature-icon" style="--icon-color: #A855F7;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>1-Minute KYC</h3>
+          <p>Upload your Nepali Citizenship or Passport. AI-powered verification completes in under 60 seconds — fully NRB & FATF compliant.</p>
+          <div class="feature-tag">AI-Powered</div>
+        </div>
+        <div class="feature-card" id="feat-delivery">
+          <div class="feature-icon" style="--icon-color: #F97316;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Multiple Delivery Options</h3>
+          <p>Send directly to Indian bank accounts (NEFT/RTGS), UPI IDs, or cash pickup at 500,000+ agent locations across India.</p>
+          <div class="feature-tag">3 Methods</div>
+        </div>
+        <div class="feature-card" id="feat-support">
+          <div class="feature-icon" style="--icon-color: #EC4899;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Nepali Support 24/7</h3>
+          <p>Live chat, WhatsApp, and phone support in Nepali and English. Our team understands your needs — because we're from Nepal too.</p>
+          <div class="feature-tag">नेपालीमा</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section" id="how-it-works">
+    <div class="section-inner">
+      <div class="section-tag">Simple Process</div>
+      <h2 class="section-title">Send Money in 4 Easy Steps</h2>
+      <p class="section-subtitle">From signup to delivery — the whole process takes less than 10 minutes the first time.</p>
+      <div class="steps-container">
+        <div class="step-connector"></div>
+        <div class="steps-grid">
+          <div class="step-card" id="step1">
+            <div class="step-number">01</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Create Account</h3>
+            <p>Sign up with your phone number. Takes 30 seconds. No paperwork needed to start.</p>
+          </div>
+          <div class="step-card" id="step2">
+            <div class="step-number">02</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01"/></svg>
+            </div>
+            <h3>Verify KYC</h3>
+            <p>Upload your Citizenship card or Passport. AI verifies it in under 60 seconds.</p>
+          </div>
+          <div class="step-card" id="step3">
+            <div class="step-number">03</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Enter Amount</h3>
+            <p>Choose how much to send. See the real-time INR equivalent and zero fees — all transparent.</p>
+          </div>
+          <div class="step-card" id="step4">
+            <div class="step-number">04</div>
+            <div class="step-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Money Delivered</h3>
+            <p>Your recipient gets the money in their Indian bank account, UPI, or cash pickup — in minutes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="how-cta">
+        <button class="btn-primary btn-lg" onclick="openApp('register')" id="how-cta-btn">Start Your First Transfer →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-inner">
+      <div class="section-tag">Real Stories</div>
+      <h2 class="section-title">Loved by Thousands of Nepalis</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" id="test1">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">"I used to wait 2 days for money to reach my parents in Delhi. With HimalPay, it arrives in 3 minutes. Unbelievable!"</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background: linear-gradient(135deg, #4F8EF7, #1B3F8F);">S</div>
+            <div>
+              <div class="test-name">Sita Karki</div>
+              <div class="test-role">Student, Kathmandu → Delhi</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card featured" id="test2">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">"The exchange rate is genuinely the best I've found. I've compared with 5 other apps — HimalPay wins every time. My family in Mumbai gets more rupees."</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background: linear-gradient(135deg, #C9A227, #F59E0B);">R</div>
+            <div>
+              <div class="test-name">Ram Prasad Shrestha</div>
+              <div class="test-role">Business Owner, Pokhara → Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" id="test3">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text">"The Nepali customer support is what makes the difference. They solved my issue in 5 minutes — in Nepali! Amazing service."</p>
+          <div class="test-author">
+            <div class="test-avatar" style="background: linear-gradient(135deg, #22C55E, #16A34A);">M</div>
+            <div>
+              <div class="test-name">Maya Tamang</div>
+              <div class="test-role">Teacher, Lalitpur → Bangalore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" id="cta-banner">
+    <div class="cta-bg">
+      <div class="cta-orb cta-orb1"></div>
+      <div class="cta-orb cta-orb2"></div>
+    </div>
+    <div class="section-inner cta-inner">
+      <h2 class="cta-title">Ready to Send Your First Transfer?</h2>
+      <p class="cta-subtitle">Join 50,000+ Nepalis who already trust HimalPay. Sign up is free — takes 30 seconds.</p>
+      <div class="cta-actions">
+        <button class="btn-hero-primary" onclick="openApp('register')" id="cta-main-btn">
+          <span>Create Free Account</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <div class="cta-app-badges">
+          <div class="app-badge" onclick="showAppStore()" id="ios-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div><div class="badge-sub">Download on the</div><div class="badge-main">App Store</div></div>
+          </div>
+          <div class="app-badge" onclick="showPlayStore()" id="android-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.35.2.75.23 1.13.09l12.03-6.93-2.54-2.54zm14.82-9.76L5.97 7.07l2.54 2.54zm1.45-.83L16.76 12l2.68-1.55c.74-.43.74-1.54 0-1.97L16.76 7l-8.45-4.86C6.14.9 3 1.94 3 4.11v15.78c0 2.17 3.14 3.21 5.31 2.97z"/></svg>
+            <div><div class="badge-sub">Get it on</div><div class="badge-main">Google Play</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2L3 28h26L16 2z" fill="url(#footerLogoGrad)" opacity="0.9"/>
+              <path d="M16 8L8 24h16L16 8z" fill="white" opacity="0.25"/>
+              <defs>
+                <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="32" y2="32">
+                  <stop offset="0%" stop-color="#4F8EF7"/>
+                  <stop offset="100%" stop-color="#1B3F8F"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">Himal<span class="logo-accent">Pay</span></span>
+        </div>
+        <p class="footer-desc">Nepal's most trusted cross-border remittance platform. Licensed by Nepal Rastra Bank. Compliant with RBI regulations.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="Instagram">◎</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#rates">Exchange Rates</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#" onclick="openApp('register')">Create Account</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">AML/KYC Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Contact Us</a>
+          <a href="#">WhatsApp Support</a>
+          <a href="#">Status Page</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>© 2026 HimalPay Pvt. Ltd. All rights reserved. Registered in Nepal. NRB License #XXXXXX.</p>
+        <div class="footer-compliance">
+          <span class="compliance-badge">🇳🇵 NRB Licensed</span>
+          <span class="compliance-badge">🔒 PCI DSS</span>
+          <span class="compliance-badge">✅ FATF Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- APP MODAL -->
+  <div class="modal-overlay" id="appModal" role="dialog" aria-modal="true" aria-label="HimalPay App">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" onclick="closeApp()" aria-label="Close">&times;</button>
+      <div class="modal-phone">
+        <div class="modal-screen" id="modalScreen">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
